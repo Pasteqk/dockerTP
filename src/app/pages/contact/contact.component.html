@@ -1,0 +1,54 @@
+<section>
+	<h1> Besoin d'infos? Pas assez de Redbull? </h1>
+	<h2> Laissez nous un message </h2>
+	<form (submit)="coucouToi()">
+		<fieldset>
+			<label> Nom </label>
+			<input name="nom" [(ngModel)]="contact.nom" #ctlNom="ngModel" required minlength="8"/>
+			<span *ngIf="ctlNom.value.length<8"> Le champ doit avoir au moins 8 caractères.</span> 
+		</fieldset>
+
+		<fieldset>
+			<label> Prenom </label>
+			<input name="prenom" [(ngModel)]="contact.prenom"/>
+		</fieldset>
+
+		<fieldset>
+			<label> Age </label>
+			<input name="age" [(ngModel)]="contact.age">
+		</fieldset>
+
+		<fieldset>
+			<label> Rue </label>
+			<input name="rue" [(ngModel)]="contact.adresse!.rue">
+		</fieldset>
+
+		<fieldset>
+			<label> Ville </label>
+			<input name="ville" [(ngModel)]="contact.adresse!.ville">
+		</fieldset>
+
+		<fieldset>
+			<label> Code Postal </label>
+			<input name="code_postal" [(ngModel)]="contact.adresse!.code_postal">
+		</fieldset>
+
+		<fieldset>
+			<label> Téléphone </label>
+			<input name="telephone" [(ngModel)]="contact.telephone">
+		</fieldset>
+
+		<fieldset>
+			<label> Email </label>
+			<input name="email" [(ngModel)]="contact.email">
+		</fieldset>
+
+		<fieldset>
+			<label> Un commentaire? </label>
+			<input name="infos" [(ngModel)]="contact.infos">
+		</fieldset>
+
+		<button> Envoyer </button>
+
+	<form>
+	<section>

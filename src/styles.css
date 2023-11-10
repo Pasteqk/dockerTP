@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;400;700&display=swap');
+
+
+app-footer {
+	position: fixed;
+	bottom: 0;
+}
+
+
+nav ul {
+	width: 100vw;
+	display: flex;
+	list-style-type: none;
+	padding-left: 0;
+	flex:1;
+	text-align: center;
+}
+
+nav ul li {
+	background-color: aliceblue;
+	padding-top: 20px;
+	padding-bottom:20px;
+	flex: 1;
+}
+
+html, body{
+    padding:0;
+    margin:0;
+    height:100%;
+    width:100%;
+    font-size:16px;
+    font-family: 'Raleway', sans-serif;
+}
+
+body > * {
+	padding: 10px 15px;
+}
+
+body  * {
+	box-sizing: border-box;
+}
+
+main {
+	width: 100vw;
+	height: calc(100vh - var(--menu) - var(--menu));
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+body > header, body > footer {
+}
+
+form {
+	display: flex;
+	flex-flow: column wrap;
+}
+
+label {
+	margin: 10px 0 5px;
+}
+
+input, textarea {
+	padding: 5px 10px;
+}
+
+.ng-invalid {
+	border-bottom: 1px solid red;
+}
+
+.ng-valid {
+	border-bottom: 1px solid green;
+}
+
+.ng-touched {
+	box-shadow: 0 0 4px yellow;
+}

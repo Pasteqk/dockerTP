@@ -1,0 +1,25 @@
+<section>
+	<input name="filtre" [(ngModel)]="filtre"/>
+	<table>
+		<thead>
+			<tr>
+				<th>n°</th>
+				<th>Titre</th>
+				<th>Nombre de places</th>
+				<th>Début</th>
+				<th>Fin</th>
+				<th>Status</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let e of events.listeEvents | events: filtre ; let i = index">
+				<td>{{ i }}</td>
+				<td>{{ e.titre | uppercase }}</td>
+				<td>{{ e.places }}</td>
+				<td>{{ e.horaires.debut }}</td>
+				<td>{{ e.horaires.fin }}</td>
+				<td>{{ e.date | date:'dd/MM/yyyy, hh:mm::ss'}}</td>
+			</tr>
+		</tbody>
+	</table>
+</section>

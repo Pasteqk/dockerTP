@@ -1,0 +1,15 @@
+<h1>{{ title }}</h1>
+<form (ngSubmit)="auth.authentification()">
+	<fieldset>
+		<label>Login:</label>
+		<input type="text" name="login" [(ngModel)] = "auth.authID.id" required>
+	</fieldset>
+
+	<fieldset>
+		<label>Password:</label>
+		<input type="password" name="password" [(ngModel)] = "auth.authID.mdp" required>
+	</fieldset>
+
+	<button type="submit">Connexion</button>
+	<button type="reset">Effacer</button>
+</form>

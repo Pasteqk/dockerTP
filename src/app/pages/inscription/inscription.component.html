@@ -1,0 +1,22 @@
+<h1>{{ title }}</h1>
+<form (ngSubmit)="onSubmit()">
+	<label>Login:</label>
+	<input type="text" id="login" name="login" [(ngModel)] = "formData.login" required>
+
+	<label>Nom:</label>
+	<input type="text" name="nom" [(ngModel)] = "formData.nom" required>
+
+	<label>Prenom:</label>
+	<input type="text" name="prenom" [(ngModel)] = "formData.prenom" required>
+
+	<label>email:</label>
+	<input type="text" name="email" [(ngModel)] = "formData.email" required>
+
+	<label>Password:</label>
+	<input type="password" id="password" name="password" [(ngModel)] = "formData.password" required>
+
+	<label>Please re-enter your password:</label>
+	<input type="password" id="validatino_password" name="validation_password" [(ngModel)] = "formData.validation_password" required>
+
+	<button type="submit">Connexion</button>
+</form>
