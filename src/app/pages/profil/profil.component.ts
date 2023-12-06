@@ -14,8 +14,8 @@ export class ProfilComponent {
 		login: '',
 		nom: '',
 		prenom: '',
-    email: '',
-    status: ''
+    email: this.auth.profil.email,
+    status: this.auth.profil.status
 	};
 
 	onSubmit() {

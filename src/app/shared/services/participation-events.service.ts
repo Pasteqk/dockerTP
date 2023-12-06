@@ -3,6 +3,7 @@ import { Firestore, doc, collection, getDocs, addDoc, setDoc, updateDoc, deleteD
 import { BehaviorSubject, map, Observable, from } from 'rxjs';
 import { AuthService } from './auth.service';
 import { query, where } from "firebase/firestore";
+import { BlockGroup } from '@angular/compiler';
 
 @Injectable({
   providedIn: 'root'
@@ -15,13 +16,13 @@ export class ParticipationEventsService {
     },)
   }
 
-  async verifInscription(idEvent: string) {
+  verifInscription(idEvent: string): Promise<boolean> {
     const recherche = query(
       collection(this.store, 'participationEvents'),
       where("idEvent", "==", idEvent),
       where("idUser", "==", this.auth.firebaseUser!.uid)
     );
-    await getDocs(recherche).then(docs => { return (!docs.empty) })
+    return getDocs(recherche).then(docs => { return (!docs.empty) })
   };
 
   desinscription(idEvent: string) {

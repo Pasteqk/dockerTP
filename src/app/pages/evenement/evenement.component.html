@@ -8,6 +8,6 @@
 <button class="button-3" routerLink="/connexion" *ngIf="!auth.isLoggedIn()"> Se connecter pour s'inscrire à
   l'événement!</button>
 <button class="button-3" (click)="participateEvent()"
-  *ngIf="auth.isLoggedIn() && !participation.verifInscription(antoine!)"> S'inscire à l'évenement</button>
+  *ngIf="auth.isLoggedIn() && !verif"> S'inscire à l'évenement</button>
 <button class="button-3" (click)="desincriptionEvent()"
-  *ngIf="auth.isLoggedIn() && participation.verifInscription(antoine!)"> Se désinscrire de l'évenement</button>
+  *ngIf="auth.isLoggedIn() && verif"> Se désinscrire de l'évenement</button>

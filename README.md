@@ -7,7 +7,11 @@ docker-compose up
 Then the site will be available at the URL : [Site](http://localhost:4200/)
 
 
+# Liste des utilisateurs
 
+ID : oui@oui.fr MDP: ouioui Status: SuperAdmin
+
+ID : klein@gmail.com  MDP: 123456 Status: User
 
 
 # GestionnaireSoiree

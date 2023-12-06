@@ -1,5 +1,5 @@
 <h1> Modifier mon profil </h1>
-<form (ngSubmit)="onSubmit()">
+<form class="registration-form"  (ngSubmit)="onSubmit()">
 	<label>E-Mail:</label>
 	<input type="text" id="login" name="login" [(ngModel)] = "formData.login" required>
 
@@ -8,10 +8,6 @@
 
 	<label>Prenom:</label>
 	<input type="text" name="prenom" [(ngModel)] = "formData.prenom" required>
-
-    <input type="hidden" name="email", [(ngModel)] = "formData.email" value = "{{this.auth.firebaseUser!.email}}"/>
-    <input type="hidden" name="status", [(ngModel)] = "formData.status" value = "{{this.auth.profil!.status}}"/>
-
 
 	<button type="submit">Enregistrer</button>
 </form>

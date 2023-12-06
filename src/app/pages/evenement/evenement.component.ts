@@ -12,12 +12,15 @@ import { AuthService } from 'src/app/shared/services/auth.service';
 export class EvenementComponent implements OnInit {
 desincriptionEvent() {
   this.participation.desinscription(this.antoine!);
+  this.verif = false;
 }
   participateEvent() {
     this.participation.participe(this.antoine!);
+    this.verif = true;
   }
   antoine?: string;
   titre!: EvenementI;
+  verif?: boolean;
 //@Input('selectedE') selectedEvent!:EvenementI;
   constructor(public events: EvenementsService, private route:ActivatedRoute, public participation: ParticipationEventsService, public auth:AuthService){}
 
@@ -29,5 +32,6 @@ desincriptionEvent() {
           this.titre = x;
       });
     } 
+    this.participation.verifInscription(this.antoine!).then(doc => this.verif = doc);
   }
 }
