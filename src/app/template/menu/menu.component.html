@@ -1,10 +1,11 @@
 <nav>
 	<ul>
-		<li routerLink = "/">Accueil</li>
-		<li routerLink = "/evenements">Événements</li>
-		<li routerLink = "/inscription">M'inscrire</li>
-		<li routerLink = "/profil">Mon profil</li>
-		<li routerLink = "/utilisateurs">Ils se sont déjà inscrits</li>
-		<li routerLink = "/connexion">Se connecter</li>
+		<li class="bouton" routerLink = "/">Accueil</li>
+		<li class="bouton" routerLink = "/evenements">Événements</li>
+		<li class="bouton" routerLink = "/inscription" *ngIf="!auth.isLoggedIn()" >M'inscrire</li>
+		<li class="bouton" routerLink = "/profil" *ngIf="auth.isLoggedIn()">Mon profil</li>
+		<li class="bouton" routerLink = "/utilisateurs">Ils se sont déjà inscrits</li>
+		<li class="bouton" routerLink = "/connexion" *ngIf="!(auth.isLoggedIn())">Se connecter</li>
+		<li class="bouton" routerLink = "/" (click)="auth.fireSignOut()" *ngIf="auth.isLoggedIn()">Se déconnecter</li>
 	</ul>
 </nav>

@@ -1,0 +1,13 @@
+<p style="text-align: center;">Ceci est l'évenement avec l'ID "{{antoine}}" et son titre est {{titre.titre}}</p>
+
+<img [src]=titre.image width="25%" class="center" />
+<h1 style="text-align: center;">
+  {{titre.alt}}
+</h1>
+
+<button class="button-3" routerLink="/connexion" *ngIf="!auth.isLoggedIn()"> Se connecter pour s'inscrire à
+  l'événement!</button>
+<button class="button-3" (click)="participateEvent()"
+  *ngIf="auth.isLoggedIn() && !participation.verifInscription(antoine!)"> S'inscire à l'évenement</button>
+<button class="button-3" (click)="desincriptionEvent()"
+  *ngIf="auth.isLoggedIn() && participation.verifInscription(antoine!)"> Se désinscrire de l'évenement</button>

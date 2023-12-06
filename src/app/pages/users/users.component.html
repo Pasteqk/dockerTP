@@ -1,19 +1,20 @@
+<h1 class="title">Les personnes déjà inscrites sont :</h1>
 <section>
-	<table>
+	<table class="tableauInscrits">
 		<thead>
 			<tr>
-				<th>Nom</th>
-				<th>Prénom</th>
-				<th>Email</th>
-				<th>status</th>
+				<th style="width:100px">Nom</th>
+				<th style="width:100px">Prénom</th>
+				<th style="width: 250px;">Email</th>
+				<th style="width: 150px;">status</th> 		
 			</tr>
 		</thead>
-		<tbody>
+		<tbody class="tbodyInscrit">
 			<tr *ngFor="let u of listeUsers">
-				<td>{{ u.nom }}</td>
-				<td>{{ u.prenom }}</td>
-				<td>{{ u.email }}</td>
-				<td><span *ngIf="u.status != 'user'">{{ u.status }}</span></td>
+				<td style="width: 100px;">{{ u.nom }}</td>
+				<td style="width: 100px;">{{ u.prenom }}</td>
+				<td style="width: 250px;">{{ u.email }}</td>
+				<td style="width: 150px;"><span *ngIf="u.status != 'user'">{{ u.status }}</span></td>
 			</tr>
 		</tbody>
 	</table>

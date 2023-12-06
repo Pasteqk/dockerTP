@@ -1,7 +1,7 @@
 <section>
-	<h1> Besoin d'infos? Pas assez de Redbull? </h1>
-	<h2> Laissez nous un message </h2>
-	<form (submit)="coucouToi()">
+	<h1 class="title"> Besoin d'infos? Pas assez de Redbull? </h1>
+	<h2 class="title"> Laissez nous un message </h2>
+	<form class="registration-form" (submit)="coucouToi()">
 		<fieldset>
 			<label> Nom </label>
 			<input name="nom" [(ngModel)]="contact.nom" #ctlNom="ngModel" required minlength="8"/>

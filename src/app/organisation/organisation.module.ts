@@ -7,6 +7,7 @@ import { OrgaMenuComponent } from './template/orga-menu/orga-menu.component';
 import { OrgaEventsComponent } from './pages/orga-events/orga-events.component';
 import { OrgaStocksComponent } from './pages/orga-stocks/orga-stocks.component';
 import { OrganisationComponent } from './organisation/organisation.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { OrganisationComponent } from './organisation/organisation.component';
     OrganisationComponent
   ],
   imports: [
+    FormsModule,
     CommonModule,
     OrganisationRoutingModule
   ]

@@ -10,18 +10,24 @@ import { MentionsComponent } from './pages/mentions/mentions.component';
 import { RgpdComponent } from './pages/rgpd/rgpd.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { ErrorComponent } from './pages/error/error.component';
+import { EvenementComponent } from './pages/evenement/evenement.component';
+import { authGuard } from './shared/securite/auth.guard';
 
 const routes: Routes = [
 	{path: '', component:AccueilComponent},
 	{path: 'profil', component:ProfilComponent},
 	{path: 'utilisateurs', component:UsersComponent},
 	{path: 'evenements', component:EvenementsComponent},
+	{path: 'evenement/:antoine', component:EvenementComponent},
 	{path: 'inscription', component:InscriptionComponent},
 	{path: 'connexion', component:ConnexionComponent},
 	{path: 'mentions', component:MentionsComponent},
 	{path: 'rgpd', component:RgpdComponent},
 	{path: 'contact', component:ContactComponent},
-	{path: 'organisation' , loadChildren: () => import('./organisation/organisation.module').then(m => m.OrganisationModule)},
+	{path: 'organisation' ,
+		loadChildren: () => import('./organisation/organisation.module').then(m => m.OrganisationModule),
+		canActivate: [authGuard]
+},
 	{path: '**', component:ErrorComponent},
 ];
 

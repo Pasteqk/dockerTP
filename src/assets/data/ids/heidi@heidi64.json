@@ -3,5 +3,6 @@
 	"prenom": "Heidi",
 	"id": "heidi",
 	"email": "heidi@heidi.heidi",
-	"status": "user"
+	"status": "user",
+	"token": "arthur.klein.estvraimentgentil"
 }

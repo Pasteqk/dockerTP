@@ -1,5 +1,5 @@
 <h1>{{ title }}</h1>
-<form (ngSubmit)="auth.authentification()">
+<form class="registration-form" (ngSubmit)="auth.fireAuth()">
 	<fieldset>
 		<label>Login:</label>
 		<input type="text" name="login" [(ngModel)] = "auth.authID.id" required>

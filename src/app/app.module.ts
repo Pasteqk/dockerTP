@@ -17,8 +17,15 @@ import { MentionsComponent } from './pages/mentions/mentions.component';
 import { RgpdComponent } from './pages/rgpd/rgpd.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { ErrorComponent } from './pages/error/error.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { EventsPipe } from './shared/pipes/events.pipe';
+import { EvenementComponent } from './pages/evenement/evenement.component';
+import { TokenInterceptor } from './shared/securite/token.interceptor';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { getAuth, provideAuth } from '@angular/fire/auth';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { getDatabase, provideDatabase } from '@angular/fire/database';
+import { getStorage, provideStorage } from '@angular/fire/storage';
 
 @NgModule({
   declarations: [
@@ -37,14 +44,33 @@ import { EventsPipe } from './shared/pipes/events.pipe';
     ContactComponent,
     ErrorComponent,
     EventsPipe,
+    EvenementComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-	FormsModule,
-	HttpClientModule,
+	  FormsModule,
+	  HttpClientModule,
+   provideFirebaseApp(
+    () => initializeApp(
+      {"projectId":"cy2023-antoine",
+      "appId":"1:967499868780:web:b981555575959568ff0649",
+      "storageBucket":"cy2023-antoine.appspot.com",
+      "apiKey":"AIzaSyCBAXZwyRKnB-UTgoFocGwElstLsu8hUAs",
+      "authDomain":"cy2023-antoine.firebaseapp.com",
+      "messagingSenderId":"967499868780"})),
+   provideAuth(() => getAuth()),
+   provideFirestore(() => getFirestore()),
+   provideDatabase(() => getDatabase()),
+   provideStorage(() => getStorage()),
   ],
-  providers: [],
+  providers: [
+    {
+      provide:HTTP_INTERCEPTORS,
+      useClass:TokenInterceptor,
+      multi:true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

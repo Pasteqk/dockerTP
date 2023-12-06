@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "cy2023-antoine": {
+      "hosting": {
+        "gestionnaire-soiree": [
+          "cy2023-antoine"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "cy2023-antoine"
+  }
+}

@@ -1,1 +1,17 @@
-<p>profil works!</p>
+<h1> Modifier mon profil </h1>
+<form (ngSubmit)="onSubmit()">
+	<label>E-Mail:</label>
+	<input type="text" id="login" name="login" [(ngModel)] = "formData.login" required>
+
+	<label>Nom:</label>
+	<input type="text" name="nom" [(ngModel)] = "formData.nom" required>
+
+	<label>Prenom:</label>
+	<input type="text" name="prenom" [(ngModel)] = "formData.prenom" required>
+
+    <input type="hidden" name="email", [(ngModel)] = "formData.email" value = "{{this.auth.firebaseUser!.email}}"/>
+    <input type="hidden" name="status", [(ngModel)] = "formData.status" value = "{{this.auth.profil!.status}}"/>
+
+
+	<button type="submit">Enregistrer</button>
+</form>

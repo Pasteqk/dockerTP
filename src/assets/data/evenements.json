@@ -1,23 +1,5 @@
 [
   {
-    "titre": "Démarrage du cours Angular",
-    "date": 1699347579844,
-    "places": 22,
-    "horaires": {
-      "debut": "Hier matin",
-      "fin": "Hier soir"
-    }
-  },
-  {
-    "titre": "Voir la partie dynamique des données dans Angular",
-    "date": 1699347579850,
-    "places": 12,
-    "horaires": {
-      "debut": "Ce matin",
-      "fin": "Plus tard"
-    }
-  },
-  {
     "titre": "Modularisation des trucs",
     "date": 1699347579899,
     "places": 26,

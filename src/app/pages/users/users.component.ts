@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { UsersI } from 'src/app/shared/models/users-i';
+import { UsersService } from 'src/app/shared/services/users.service';
 
 @Component({
   selector: 'app-users',
@@ -7,19 +8,9 @@ import { UsersI } from 'src/app/shared/models/users-i';
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent {
-	listeUsers:Array<UsersI> = [
-		{
-			nom: "Pépito",
-			prenom: "Micolassonne",
-			email: "pepito@yahoo.fr",
-			status: "user"
-		},
-		{
-			nom: "Pincemi",
-			prenom: "Pincemoi",
-			email: "pincemi@pincemoi.fr",
-			status: "admin"
-		},
-	];
-
+	constructor(public users: UsersService){
+		this.users.getAllUsers().then(us => this.listeUsers = us);
+	};
+	listeUsers:Array<UsersI> = [];
+	
 }

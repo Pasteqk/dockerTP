@@ -1,8 +1,8 @@
 <nav>
 	<ul>
-		<li routerLink = "/mentions">Mentions légales</li>
-		<li routerLink = "/rgpd">RGPD</li>
-		<li routerLink = "/contact">Contact</li>
-		<li routerLink = "/organisation">Accès privé (organisation)</li>
+		<li class="bouton" routerLink = "/mentions">Mentions légales</li>
+		<li class="bouton" routerLink = "/rgpd">RGPD</li>
+		<li class="bouton" routerLink = "/contact">Contact</li>
+		<li class="bouton" routerLink = "/organisation" *ngIf="verifAdmin()"> Accès privé (organisation)</li>
 	</ul>
 </nav>

@@ -6,9 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./accueil.component.css']
 })
 export class AccueilComponent {
-  title = 'Welcome';
-  soustitre: string = "sous-titre";
-  moustache: string = "Ceci est une moustache";
+  title = 'Bienvenue sur noter super site de gestionnaire de soirée !';
+  soustitre: string = "Une soirée se tient bientôt ! Aller dans la page événements pour être mis au courant et vous inscrire !";
+  moustache: string = ""
   liste_moustache: Array<string> = ["Moustache", "Favoris"];
 
 }
