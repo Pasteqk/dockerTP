@@ -1,3 +1,15 @@
+# How to launch the program
+
+This program needs to be launched while being in the main directory, you open the terminal at the directory path and type 
+```shell
+docker-compose up
+```
+Then the site will be available at the URL : [Site](http://localhost:4200/)
+
+
+
+
+
 # GestionnaireSoiree
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.9.
